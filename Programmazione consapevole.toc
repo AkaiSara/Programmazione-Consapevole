@@ -22,3 +22,4 @@
 \contentsline {section}{\numberline {3.5}Esempi}{16}
 \contentsline {paragraph}{Esercizio Risolto 3.2}{16}
 \contentsline {paragraph}{Esercizio Risolto 3.3}{16}
+\contentsline {paragraph}{Esercizio Risolto 3.4}{17}
