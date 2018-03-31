@@ -1,0 +1,24 @@
+\babel@toc {italian}{}
+\babel@toc {italian}{}
+\contentsline {paragraph}{Prefazione}{4}
+\contentsline {chapter}{\numberline {1}Introduzione}{5}
+\contentsline {section}{\numberline {1.1}Struttura di un computer}{5}
+\contentsline {section}{\numberline {1.2}Come scrivere ed eseguire un programma}{5}
+\contentsline {section}{\numberline {1.3}Notazione}{5}
+\contentsline {chapter}{\numberline {2}Tipi predefiniti e variabili}{7}
+\contentsline {section}{\numberline {2.1}Tipi predefiniti}{7}
+\contentsline {section}{\numberline {2.2}Variabili e dichiarazioni}{7}
+\contentsline {section}{\numberline {2.3}Espressioni e conversioni}{7}
+\contentsline {section}{\numberline {2.4}A cosa servono i tipi}{7}
+\contentsline {chapter}{\numberline {3}Istruzioni di base}{9}
+\contentsline {section}{\numberline {3.1}Input/Otput}{9}
+\contentsline {subsection}{\numberline {3.1.1}I file}{10}
+\contentsline {subsection}{\numberline {3.1.2}Collegamento tra programma e file}{11}
+\contentsline {subsection}{\numberline {3.1.3}Operazioni di i/o}{12}
+\contentsline {paragraph}{Esercizio 3.1}{13}
+\contentsline {section}{\numberline {3.2}Assegnazione}{14}
+\contentsline {section}{\numberline {3.3}Condizionale}{15}
+\contentsline {section}{\numberline {3.4}Cicli while}{15}
+\contentsline {section}{\numberline {3.5}Esempi}{16}
+\contentsline {paragraph}{Esercizio Risolto 3.2}{16}
+\contentsline {paragraph}{Esercizio Risolto 3.3}{16}
