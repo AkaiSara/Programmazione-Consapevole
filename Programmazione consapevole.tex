@@ -248,21 +248,55 @@ main() {
 Chiamiamo le due variabili i cui R-valori sono, rispettivamente, il massimo ed il minimo tra i valori letti in precedenza, \texttt{max} e \texttt{min}. Sembra semplice, ma c'è un problema.
 Alla prima esecuzione del \texttt{while}, non abbiamo ancora letto alcun valore e quindi che valore dovranno avere \texttt{max} e \texttt{min}?
 Questo problema si presenterà spesso in altri esercizi proposti nel seguito.
-Lo affronteremo in modo completo subito. Possiamo assegnare a \texttt{max} e \texttt{min} dei valori ad hoc che fanno funzionare le cose, oppure leggere il primo valore (sappiamo che c'è visto che sono previste 10 letture) e assegnarlo sia a \texttt{max} che a min e dopo leggere gli altri 9 valori. Pensiamo prima alla soluzione con i valori ad hoc. Per max abbiamo bisogno di un valore che sarà certamente minore o uguale di ogni valore intero che potremo leggere.
-Questo valore è ovviamente $INT_MIN$: il minimo intero rappresentabile. Analogamente, per min, il valore giusto è $INT_MAX$. Vediamo un programma che segue questa idea.}
+Lo affronteremo in modo completo subito. Possiamo assegnare a \texttt{max} e \texttt{min} dei valori ad hoc che fanno funzionare le cose, oppure leggere il primo valore (sappiamo che c'è visto che sono previste 10 letture) e assegnarlo sia a \texttt{max} che a min e dopo leggere gli altri 9 valori. Pensiamo prima alla soluzione con i valori ad hoc. Per \texttt{max} abbiamo bisogno di un valore che sarà certamente minore o uguale di ogni valore intero che potremo leggere.
+Questo valore è ovviamente \texttt{$INT\_MIN$}: il minimo intero rappresentabile. Analogamente, per min, il valore giusto è \texttt{$INT\_MAX$}. Vediamo un programma che segue questa idea.}
 
+\begin{codice}
+#include<iostream>
+using namespace std;
+main() {
+  int x, i=0, max=INT_MIN, min=INT_MAX;
+  while (i<lO) {
+    cout << "inserire il prossimo intero";
+    cin >> x;
+    if(x > max)
+      max=x;
+    else
+      if(min>x)
+        min=x;
+    i=i+1;
+  }
+  cout << "il valore massimo e' " << max << ", il valore minimo e' " << min;
+}
+\end{codice}
 
+\noindent \textit{Questo programma non fa quello che vogliamo. Basta infatti considerare il caso in cui i valori letti siano, 1, 2, ... , 10, per vedere che alla fine \texttt{max=10}, il che è giusto, ma che \texttt{min} sarà rimasto tristemente \texttt{$INT\_MAX$}! Certo se i 10 valori non fossero sempre crescenti, allora il programma funzionerebbe, ma non possiamo accontentarci di un programma che è quasi sempre corretto! Possiamo correggerlo? Certamente, ma non è possibile considerare \texttt{min} solo quando \texttt{max} non cambia. Perché i valori ad hoc con cui li abbiamo inizializzati vanno sempre cambiati, quindi dobbiamo essere sicuri che ciascuna delle due variabili sia confrontata almeno una volta con uno dei valori letti. Un programma che corregge l'errore segue.}
 
-
-
-
-
-
-
-
-
-
-
+\begin{codice}
+// SOLUZIONE 1
+#include<iostream>
+using namespace std;
+main() {
+  int x, i=0, max=INT_MIN, min=INT_MAX;
+  while(i<10) {
+    cout << "inserire il prossimo intero";
+    cin >> x; 
+    if(x > max) {
+      max=x;
+      if (i==0)
+        min=x;
+    }
+    else
+      if(min>x) {
+        min=x;
+        if(i==0) //($) questo commento e' usato nel
+        max=x;   //($) primo esercizio del prossimo Capitolo
+      }
+    i=i+1;
+  }
+  cout << "il valore massimo e' " << max << ", il valore minimo e' " << min;
+}
+\end{codice}
 
 
 
