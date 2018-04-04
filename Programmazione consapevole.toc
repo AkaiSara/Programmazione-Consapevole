@@ -23,3 +23,7 @@
 \contentsline {paragraph}{Esercizio Risolto 3.2}{16}
 \contentsline {paragraph}{Esercizio Risolto 3.3}{16}
 \contentsline {paragraph}{Esercizio Risolto 3.4}{17}
+\contentsline {paragraph}{Esercizio Risolto 3.5}{19}
+\contentsline {paragraph}{Esercizio 3.6}{20}
+\contentsline {paragraph}{Esercizio 3.7}{20}
+\contentsline {section}{\numberline {3.6}Sulla visibilit\IeC {\`a} delle variabili}{20}
