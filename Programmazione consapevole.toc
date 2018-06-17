@@ -46,3 +46,5 @@
 \contentsline {section}{\numberline {7.5}Funzioni e valori restituiti}{37}{section.7.5}
 \contentsline {section}{\numberline {7.6}Esercizi commentati sulle funzioni}{37}{section.7.6}
 \contentsline {section}{\numberline {7.7}Esercizi proposti}{37}{section.7.7}
+\contentsline {chapter}{\numberline {8}Gestione dinamica dei dati e liste}{39}{chapter.8}
+\contentsline {section}{\numberline {8.1}Gestione dinamica dei dati}{39}{section.8.1}
