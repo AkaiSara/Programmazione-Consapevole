@@ -1,0 +1,18 @@
+\chapter{Gestione dinamica dei dati e liste}
+
+Le variabili viste finora sono dette automatiche perchè la memoria RAM per contenere il loro R-valore viene allocata e deallocata automaticamente secondo la disciplina a pila descritta nella sezione 3.6. Ci sono casi in cui esrvono dati la cui vita e le cui dimensioni possono venire gestiti a seconda del bisogno ed al di fuori delle regole automatiche. L'abilità di creare e distruggere tali dati si dice \textbf{gestione dinamica dei dati} ed i dati prodotti in questo modo sono detti \textbf{dinamici}. Utilizzando la gestione dinamica dei dati costruiremo strutture dati ricorsive come le \textbf{liste concatenate} e gli \textbf{alberi binari} sulle quali vedremo moltissimi esempi di funzioni ricorsive. La gestione dinamica dei dati viene realizzata con alcune semplici istruzioni C++ che verranno introdotte nella prossima sezione. Inoltre, visto che i dati dinamici non seguono le regole di gestione dei dati automatici, essi non possono venire allocati nella pila dei dati automatici, ma vengono invece allocati in un ' area di memoria RAM diversa della pila che si chiama \textbf{heap}.
+
+\section{Gestione dinamica dei dati}
+Le istruzioni del C++ per la gestione dinamica dei dati sono le seguenti. L'operazione di allocazione della memoria è la funzione \texttt{new T}, in cui \texttt{T} è un tipo qualsiasi. Una tale invocazione richiede al sistema operativo di allocare una zona di memoria RAM sufficiente a contenere un valore di tipo \texttt{T}. In caso la richiesta venga soddisfatta, la memoria viene allocata in una parte della RAM chiamata \textbf{heap} ed essa resta a disposizione del programma finchè il programma stesso non la dealloca eseguendo il comando di deallocazione \texttt{delete}. 
+Lo heap è un'area di memoria RAM diversa da quella che contiene la pila in cui vengono gestite le variabili automatiche. La funzione \texttt{new} ha il seguente prototipo: \texttt{T* new(T);}. L'invocazione di \texttt{new}, se ha successo, riserva sullo heap una sequenza di byte della dimensione giusta a contenere un valore di tipo \texttt{T} e restituisce l'indirizzo del primo byte di questa sequenza. Se invece l'allocazione non ha successo, il valore restituito è 0. In programmi in cuci la robustezza è importante conviene, dopo ogni invocazione di \texttt{new}, testare se il valore ritornato è 0 oppure no. Una \texttt{new} può fallire perchè la sua richiesta di memoria supera la disponibilità di memoria del PC al momento della richiesta; è raro che un tale fallimento avvenga per programmi come quelli che svilupperemo in questo corso. Vediamo un esempio di allocazione dinamica. \\
+\begin{codice}
+
+    struct S{int x,y; char a,b;};
+    main(){
+        S* p = new S[10];
+        if(p==0) throw(..errore..) //errore d'allocazione, gestiscilo
+        p[0].x = 10;
+        p[2].a = 'h';
+    }
+\end{codice}    
+In questo frammento di programma allochiamo un array di 10 strutture \texttt{S}. L'array viene acceduto attraverso il puntatore \texttt{p} a cui possiamo applicare l'operatore di subscripting 

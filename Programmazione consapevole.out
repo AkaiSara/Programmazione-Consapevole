@@ -17,3 +17,24 @@
 \BOOKMARK [1][-]{section.3.4}{Cicli while}{chapter.3}% 17
 \BOOKMARK [1][-]{section.3.5}{Esempi}{chapter.3}% 18
 \BOOKMARK [1][-]{section.3.6}{Sulla visibilit\340 delle variabili}{chapter.3}% 19
+\BOOKMARK [0][-]{chapter.4}{La correttezza dei programmi}{}% 20
+\BOOKMARK [1][-]{section.4.1}{Regola di prova del while}{chapter.4}% 21
+\BOOKMARK [1][-]{section.4.2}{Altri esempi di prove di correttezza}{chapter.4}% 22
+\BOOKMARK [2][-]{subsection.4.2.1}{Esempio di gestione delle eccezioni}{section.4.2}% 23
+\BOOKMARK [0][-]{chapter.5}{Puntatori, array ed aritmetica dei puntatori}{}% 24
+\BOOKMARK [1][-]{section.5.1}{Puntatori e riferimenti}{chapter.5}% 25
+\BOOKMARK [1][-]{section.5.2}{Array e for}{chapter.5}% 26
+\BOOKMARK [1][-]{section.5.3}{Il tipo degli array}{chapter.5}% 27
+\BOOKMARK [1][-]{section.5.4}{L'aritmetica dei puntatori}{chapter.5}% 28
+\BOOKMARK [1][-]{section.5.5}{Stringhe alla C e array di caratteri}{chapter.5}% 29
+\BOOKMARK [0][-]{chapter.6}{?}{}% 30
+\BOOKMARK [0][-]{chapter.7}{Funzioni}{}% 31
+\BOOKMARK [1][-]{section.7.1}{Funzioni}{chapter.7}% 32
+\BOOKMARK [1][-]{section.7.2}{Passaggio dei parametri}{chapter.7}% 33
+\BOOKMARK [1][-]{section.7.3}{Funzioni ed arrays}{chapter.7}% 34
+\BOOKMARK [1][-]{section.7.4}{Variabili globali}{chapter.7}% 35
+\BOOKMARK [1][-]{section.7.5}{Funzioni e valori restituiti}{chapter.7}% 36
+\BOOKMARK [1][-]{section.7.6}{Esercizi commentati sulle funzioni}{chapter.7}% 37
+\BOOKMARK [1][-]{section.7.7}{Esercizi proposti}{chapter.7}% 38
+\BOOKMARK [0][-]{chapter.8}{Gestione dinamica dei dati e liste}{}% 39
+\BOOKMARK [1][-]{section.8.1}{Gestione dinamica dei dati}{chapter.8}% 40
