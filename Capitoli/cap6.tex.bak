@@ -378,8 +378,19 @@ b$\neq$a \texttt{T[a]='T[a]}));
 
 \end{itemize}
 
-\textit{\textbf{POST4'} asserisce che il ciclo più interno assegna ad \texttt{OK} un valore che permette di estendere in modo corretto l'invariante \textbf{R3'} al prossimo elemento \texttt{C[i][k]}.
-L'invariante \textbf{R4'} si ottiene da \textbf{POST4'} applicando la ricetta e sostituendo \texttt{z-1} a 5.
-Che \textbf{R4'} sia invariante del ciclo più interno è facile da vedere.
-La condizione d'uscita è banale grazie alla \textbf{ricetta}.
-La condizione iniziale è altrettanto semplice a causa del fatto che \texttt{z=0} e \texttt{OK=false}.}
+\textit{\textbf{POST4'} asserisce che il ciclo più interno assegna ad \texttt{OK} un valore che permette di estendere in modo corretto l'invariante \textbf{R3'} al prossimo elemento \texttt{C[i][k].
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+

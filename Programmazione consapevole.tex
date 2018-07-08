@@ -2,23 +2,28 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english,italian]{babel} %lingua 
+\usepackage{amssymb} %Per il simbolo "non esiste" cap.6
 
 \usepackage{geometry}
 \usepackage{enumerate}%numerazione delle liste
 \usepackage{hyperref}
-\hypersetup{hidelinks}
+\hypersetup
+{
+	hidelinks,
+	urlcolor=green
+}
 
 \geometry{a4paper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=3cm,heightrounded,bindingoffset=5mm}%margini
 \raggedbottom
 
-
 \usepackage{graphicx} %img/media
 
-\usepackage{listings} %Per inserire codice
 \usepackage[usenames]{color} %Per permettere la colorazione dei caratteri 
 \definecolor{orange}{rgb}{1,0.647,0}
 \definecolor{cornflowerblue}{rgb}{0.392,0.584,0.929}
 \definecolor{green}{rgb}{0, 0.902, 0.451}
+
+\usepackage{listings} %Per inserire codice
 \lstnewenvironment{codice}[1]
 {	\lstset
 	{	basicstyle=\ttfamily,
@@ -41,9 +46,11 @@
 }{}
 
 
+%===============================================================================
+
 \begin{document}
 
-\author{Andrea Salmaso}
+\author{Andrew Sadi \\ PickRicInfix (Righez)}
 \title{Programmazione consapevole \\ (semplice è bello)}
 \maketitle
 
