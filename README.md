@@ -8,3 +8,4 @@ Ogni contributo è ben accetto.
 ### Attualmente disponibili i capitoli:
 * Capitolo 2
 * Capitolo 3
+* Capitolo 6
