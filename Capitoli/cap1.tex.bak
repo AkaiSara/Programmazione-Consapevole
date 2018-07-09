@@ -176,5 +176,4 @@ Spesso verranno considerati gli insiemi composti da tutti gli interi tra 2 estre
 Un tale insieme è rappresentato con \textit{[i..j]}.
 Qualora \textit{i > j}, \textit{[i..j]} rappresenta l'insieme vuoto.
 In molti casi \textit{[i..j]} rappresenta indici di un array \textit{A} e con \textit{A[i..j]} si indica la sequenza degli elementi di \textit{A} dalla posizione \textit{i} alla \textit{j}.
-
-\noindent Se \textit{[i..j]} è tale che \textit{i > j}, allora \textit{A[i..j]} rappresenta la sequenza vuota di elementi dell'array \textit{A}. 
+Se \textit{[i..j]} è tale che \textit{i > j}, allora \textit{A[i..j]} rappresenta la sequenza vuota di elementi dell'array \textit{A}. 
