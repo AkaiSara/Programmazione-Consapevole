@@ -76,7 +76,7 @@ Che il test di permanenza sia falso significa che \texttt{x=}0 e in questo caso 
 Chiaramente il cuore della dimostrazione è l'invariante \textbf{R} che descrive quello che il ciclo calcola dopo ogni numero di iterazioni.
 Ma possiamo seguire questo schema anche per dimostrare la correttezza della seconda soluzione 
 dell'Esercizio Risolto 3.3, quella che usa il \texttt{do-while}?
-\textbf{PRE} e \textbf{POST}}
+\textbf{PRE} e 
 
 
 

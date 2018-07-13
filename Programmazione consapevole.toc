@@ -29,9 +29,10 @@
 \contentsline {paragraph}{Esercizio 3.7}{30}{section*.10}
 \contentsline {section}{\numberline {3.6}Sulla visibilit\IeC {\`a} delle variabili}{30}{section.3.6}
 \contentsline {chapter}{\numberline {4}La correttezza dei programmi}{35}{chapter.4}
-\contentsline {section}{\numberline {4.1}Regola di prova del \textit {while}}{35}{section.4.1}
-\contentsline {section}{\numberline {4.2}Altri esempi di prove di correttezza}{35}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Esempio di gestione delle eccezioni}{35}{subsection.4.2.1}
+\contentsline {paragraph}{Esercizio Risolto 4.1}{35}{section*.11}
+\contentsline {section}{\numberline {4.1}Regola di prova del \textit {while}}{36}{section.4.1}
+\contentsline {section}{\numberline {4.2}Altri esempi di prove di correttezza}{36}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Esempio di gestione delle eccezioni}{36}{subsection.4.2.1}
 \contentsline {chapter}{\numberline {5}Puntatori, array ed aritmetica dei puntatori}{37}{chapter.5}
 \contentsline {section}{\numberline {5.1}Puntatori e riferimenti}{37}{section.5.1}
 \contentsline {section}{\numberline {5.2}Array e for}{37}{section.5.2}
@@ -39,9 +40,9 @@
 \contentsline {section}{\numberline {5.4}L'aritmetica dei puntatori}{37}{section.5.4}
 \contentsline {section}{\numberline {5.5}Stringhe alla C e array di caratteri}{37}{section.5.5}
 \contentsline {chapter}{\numberline {6}Alla Ricerca dell'Invariante Perduto}{39}{chapter.6}
-\contentsline {paragraph}{Definizione 6.1}{39}{section*.11}
-\contentsline {paragraph}{Esercizio Risolto 6.1}{40}{section*.12}
-\contentsline {paragraph}{Esercizio Risolto 6.2}{44}{section*.13}
+\contentsline {paragraph}{Definizione 6.1}{39}{section*.12}
+\contentsline {paragraph}{Esercizio Risolto 6.1}{40}{section*.13}
+\contentsline {paragraph}{Esercizio Risolto 6.2}{44}{section*.14}
 \contentsline {chapter}{\numberline {7}Funzioni}{47}{chapter.7}
 \contentsline {section}{\numberline {7.1}Funzioni}{47}{section.7.1}
 \contentsline {section}{\numberline {7.2}Passaggio dei parametri}{47}{section.7.2}
