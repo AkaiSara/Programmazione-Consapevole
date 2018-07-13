@@ -6,6 +6,7 @@ completa per chi affronta il corso per la prima volta.
 Ogni contributo è ben accetto.
 
 ### Attualmente disponibili i capitoli:
+* Capitolo 1
 * Capitolo 2
 * Capitolo 3
 * Capitolo 6
