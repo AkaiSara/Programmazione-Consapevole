@@ -90,7 +90,9 @@ Nell'Esempio 1.1, abbiamo usato questi 2 \texttt{stream}.
 Gli stream sono degli oggetti e fanno quindi parte della parte orientata agli oggetti del C++.
 Ci limiteremo quindi ad usarli senza neppure cercare di spiegarli.
 Comunque una cosa dobbiamo dirla sugli oggetti: gli oggetti sono delle strutture in cui convivono dei dati e delle funzioni per manipolare questi dati.
-Nel gergo orientato agli oggetti le funzioni vengono chiamate \textbf{metodi}. Ovviamente i metodi definiti negli stream di i/o sono principalmente operazioni di i/o.Studieremo solo 2 metodi per l'input e 2 metodi per l'output.
+Nel gergo orientato agli oggetti le funzioni vengono chiamate \textbf{metodi}.
+Ovviamente i metodi definiti negli stream di i/o sono principalmente operazioni di i/o.
+Studieremo solo 2 metodi per l'input e 2 metodi per l'output.
 
 \begin{itemize}
 \item visto che consideriamo solo file di testo, cioè composti di sequenze di caratteri, è naturale leggere da questi file un carattere alla volta e scrivere su questi file un carattere alla volta. 
@@ -145,9 +147,8 @@ Se non si inseriscono esplicitamente separatori, si rischia di ottenere un file 
 
 \end{itemize}
 
-\paragraph{Esercizio 3.1} 
-\textit{Realizzare un programma che crea un file di testo in output, scrive,
-(con $>>$), su questo file i valori interi 11, 32, 455 e 6, chiude il file, lo riapre in input e cerca di leggere dal file i 4 valori interi appena scritti. Per finire chiude il file definitivamente.
+\paragraph{Esercizio 3.1}
+\textit{Realizzare un programma che crea un file di testo in output, scrive, (con $>>$), su questo file i valori interi 11, 32, 455 e 6, chiude il file, lo riapre in input e cerca di leggere dal file i 4 valori interi appena scritti. Per finire chiude il file definitivamente.
 Attenzione a separare i valori quando li scrivete!}
 
 Come spiegato in precedenza, la lettura sequenziale di un file fa in modo che ad ogni operazione di lettura venga letto il prossimo byte (o gruppo di byte). Insomma è come se sul file ci fosse un segno che avanza ad ogni lettura per indicare il prossimo byte che verrà letto.
@@ -239,14 +240,14 @@ main() {
   int x, y; 
   cout << "inserire 2 interi"; 
   cin >> x >> y; 
-  cout<<"valore di X="<< x <<"valore di y="<< y;
+  cout << "valore di x =" << x << "valore di y =" << y;
   int SOM; 
-  SOM= x+y; 
+  SOM = x+y; 
   if (SOM > 0) 
-    y=SOM;
+    y = SOM;
   else
-    x=SOM;
-  cout<<"valore di x="<< x <<"valore di y="<< y;
+    x = SOM;
+  cout << "valore di x =" << x << ", valore di y =" << y;
 }
 \end{codice}
 
@@ -260,15 +261,16 @@ La prima soluzione è la seguente:}
 #include<iostream> 
 using namespace std; 
 main() { 
-  int pos=0, neg=0, x; cin>>x; 
+  int pos = 0, neg = 0, x;
+  cin >> x; 
   while (x != 0) {
     if(x < 0)
-      neg=neg+1;
+      neg = neg+1;
     else
-      pos=pos+1;
-    cin>>x;
+      pos = pos+1;
+    cin >> x;
   }
-  cout<<"neg="<< neg <<" pos="<<pos<<endl;
+  cout << "neg = " << neg << ", pos = " << pos <<endl;
 }
 \end{codice}
 
@@ -284,16 +286,17 @@ Questa soluzione alternativa segue.}
 #include<iostream> 
 using namespace std; 
 main() { 
-  int pos=0, neg=0, x; cin>>x; 
+  int pos = 0, neg = 0, x;
+  cin >> x; 
   do {
-   cin>>x;
-   if (x < 0)
-     neg=neg+1;
+   cin >> x;
+   if(x < 0)
+     neg = neg+1;
    else
-     if(x>0)
-       pos=pos+1;
+     if(x > 0)
+       pos = pos+1;
   } while(x!=0);
-  cout<<"neg="<< neg <<" pos="<<pos<<endl;
+  cout << "neg = " << neg <<" pos = "<< pos << endl;
 }
 \end{codice}
 
@@ -321,16 +324,16 @@ Vediamo un programma che segue questa idea.}
 #include<iostream>
 using namespace std;
 main() {
-  int x, i=0, max=INT_MIN, min=INT_MAX;
-  while (i<lO) {
+  int x, i = 0, max = INT_MIN, min = INT_MAX;
+  while (i < 10) {
     cout << "inserire il prossimo intero";
     cin >> x;
     if(x > max)
-      max=x;
+      max = x;
     else
-      if(min>x)
-        min=x;
-    i=i+1;
+      if(min > x)
+        min = x;
+    i = i+1;
   }
   cout << "il valore massimo e' " << max << ", il valore minimo e' " << min;
 }
@@ -350,22 +353,22 @@ Un programma che corregge l'errore segue.}
 #include<iostream>
 using namespace std;
 main() {
-  int x, i=0, max=INT_MIN, min=INT_MAX;
-  while(i<10) {
+  int x, i = 0, max = INT_MIN, min = INT_MAX;
+  while(i < 10) {
     cout << "inserire il prossimo intero";
     cin >> x; 
     if(x > max) {
-      max=x;
-      if (i==0)
-        min=x;
+      max = x;
+      if (i == 0)
+        min = x;
     }
     else
-      if(min>x) {
-        min=x;
-        if(i==0) //($) questo commento e' usato nel
-        max=x;   //($) primo esercizio del prossimo Capitolo
+      if(min > x) {
+        min = x;
+        if(i == 0)    //($) questo commento e' usato nel
+        max=x;      //($) primo esercizio del prossimo Capitolo
       }
-    i=i+1;
+    i = i+1;
   }
   cout << "il valore massimo e' " << max << ", il valore minimo e' " << min;
 }
@@ -381,19 +384,19 @@ Resta la seconda strada per risolvere il nostro problema: leggere il primo valor
 #include<iostream>
 using namespace std;
 main() {
-  int x, i=1, max, min;
+  int x, i = 1, max, min;
   cout << "Inserire il primo intero";
   cin >> x;
-  max=min=x;
-  while(i<10) {
+  max = min = x;
+  while(i < 10) {
     cout << "Inserire il prossimo intero";
     cin >> x;
-    if(x>max)
-      max=x;
+    if(x > max)
+      max = x;
     else
-      if(min>x)
-        min=x;
-    i=i+1;
+      if(min > x)
+        min = x;
+    i = i+1;
   }
   cout << "il valore masimo e' " << max << ", il valore minimo e' " << min;
 }
@@ -415,8 +418,8 @@ La coppia di operazioni di lettura e stampa è ripetuta grazie all'uso del coman
 using namespace std;
 main() {
   ifstream PP("pippo.cpp");
-  if(PP != 0) {  //se l'apertura ha avuto successo
-    while(! PP.eof()) {
+  if(PP != 0) {    //se l'apertura ha avuto successo
+    while(!PP.eof()) {
       char c;
       c = PP.get();
       cout << c;
@@ -464,11 +467,11 @@ Ecco un main che consiste di 3 blocchi annidati con dichiarazioni e operazioni d
 main() 
 //(*)
 {
-  int x=0; //...(0)
+  int x = 0; //...(0)
   {
-    int y=1; //...(1)
+    int y = 1; //...(1)
     {
-      int z=2; //...(2)
+      int z = 2; //...(2)
     }
   cout << x << y << endl; // (1')
   }
@@ -543,13 +546,11 @@ Quindi il risultato del seguente programma è la stampa di 1 0 per 1 0 volte: ad
 
 \begin{codice}
 
-int i=0;
-while(i<10) {
-  int x=10;
+int i = 0;
+while(i < 10) {
+  int x = 10;
   cout << x << endl;
   x = x+10;
   i++;
 }
 \end{codice}
-
-\newpage

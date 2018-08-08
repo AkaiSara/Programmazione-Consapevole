@@ -46,7 +46,7 @@ I caratteri con codifica da O a 127 sono i caratteri ASCII e sono i caratteri al
 I caratteri con codifica negativa dipendono invece dal sistema operativo che si utilizza.
 In generale tra questi sono presenti molti caratteri accentati, il segno di insieme vuoto ed altri caratteri utili.
 L'insieme dei 256 caratteri viene chiamato \textbf{extended ASCII}.
-In www.cplusplus.com si possono trovare informazioni più precise. 
+In \url{www.cplusplus.com} si possono trovare informazioni più precise. 
 
 Visto che la rappresentazione interna dei caratteri è fatta attraverso interi(sebbene di 1 solo byte), ai caratteri si possono applicare le operazioni aritmetiche.
 Naturalmente, in questo modo è molto facile ottenere risultati che non rappresentano più caratteri, cioè che sono fuori dall'intervallo -128... 27.
@@ -149,8 +149,34 @@ Un esempio di espressione booleana è la seguente.
 Si assuma che \texttt{x} sia una variabile di tipo char: \texttt{(x>='a') \&\& (x<='z')}, ha valore \texttt{true} se \texttt{x} ha come R-valore un carattere alfabetico (tra 'a' e 'z') ed altrimenti l'espressione ha valore false.
 Si noti che questa espressione usa il fatto che la codifica ASCII dei caratteri assegna ai caratteri alfabetici dei valori interi contigui e coerenti con l'ordine alfabetico.
 Più precisamente, 'a' ha codice ASCII 97, 'b' 98 e così via.
-Naturalmente il codice ASCII codifica in modo simile anche i 10 caratteri numerici e le maiuscole. 
+Naturalmente il codice ASCII codifica in modo simile anche i 10 caratteri numerici e le maiuscole.
+
+Per le espressioni booleane che contengono gli operatori logici \texttt{\&\&} e \texttt{$||$}, il C++ usa la cosiddetta valutazione \textbf{abbreviata} (o \textbf{shortcut}).
+Consideriamo l'espressione esaminata prima \texttt{(x>='a') \&\& (x<='z')}.
+La valutazione procede da sinistra a destra, ma se la condizione di sinistra \texttt{x>='a'} è falsa allora non viene valutata la condizione di destra.
+Infatti l'intera espressione è falsa, indipendentemente dal valore della condizione di destra.
+Nel caso di un'espressione che contiene l'operatore \texttt{||}, come per esempio, \texttt{(x<'a') || (x>'z')}, se la condizione di sinistra è vera non viene valutata quella di destra perché l'intera espressione è vera indipendentemente dal valore della condizione di destra.
 
 \section{A cosa servono i tipi}
+In C++, così come in moltissimi linguaggi di programmazione, ogni variabile deve venire dichiarata prima di poter essere usata e la dichiarazione specifica il tipo della variabile.
+Questa associazione implica (se il programma è corretto rispetto ai tipi) che, durante ogni esecuzione del programma, ogni variabile assumerà solo R-valori appartenenti al tipo dichiarato per quella variabile.
+Un tale comportamento è una restrizione che vincola la libertà del programmatore, ma è una restrizione \textit{a fin di bene} per chi programma.
+Infatti, grazie al tipo di ciascuna variabile, diventa più facile evitare di inserire errori nei propri programmi (per esempio, scrivendo espressioni prive di senso che mescolano variabili e valori di tipi incompatibili).
+Un vantaggio ancora più importante è che il compilatore usa i tipi per controllare automaticamente che i nostri programmi usino le variabili solo in modo coerente rispetto al tipo dichiarato per esse.
+Inoltre i tipi servono al compilatore per risolvere i problemi di overloading.
+Si immagini che il compilatore debba tradurre l'espressione \texttt{x + y}.
+Quale operazione di somma dovrà inserire nel codice macchina che deve produrre?
+Quella che somma 2 interi o quella che somma 2 reali?
+I tipi di \texttt{x} e \texttt{y} dicono al compilatore cosa deve fare.
+Il caso di tipi diversi tra loro è discusso in Sezione 2.3.
 
-\newpage
+Nonostante la parte orientata agli oggetti del C++ non venga trattata in questo testo, quando si discute dell'utilità dei tipi è obbligatorio accennarvi.
+Gli oggetti sono istanze di tipi (chiamati classi) che racchiudono al loro interno dati assieme a funzioni per manipolarli.
+Lo scopo è quello di proteggere i dati e di non permettere che essi vengano manipolati in modo arbitrario con funzioni diverse da quelle previste a questo scopo nella classe.
+La nozione di classe e la relazione di ereditarietà tra classi sono un importante ausilio alla realizzazione di programmi corretti e modificabili.
+
+Occorre osservare però che il C++ (soprattutto a causa dell'eredità del C) non è un linguaggio \textit{virtuoso} nella gestione dei tipi.
+Un anticipo di questo approccio troppo liberale rispetto ai tipi, l'abbiamo già avuto per i tipi predefiniti.
+Per esempio, in C++ i valori di tipo carattere e di tipo booleano vengono rappresentati internamente come interi e questo fatto rende corretto applicare a valori di tipo carattere e booleano degli operatori che una disciplina più rigorosa sui tipi considererebbe errori.
+Quindi, abbattendo le differenze tra tipi diversi, si perde la capacità di scoprire errori grazie ai tipi.
+Oltre a quelle appena segnalate, nel C++ ci sono altre debolezze, ancora più gravi, che vedremo successivamente e che rendono il C++ un linguaggio \textbf{insicuro rispetto ai tipi}, cioè un linguaggio nel quale è possibile (e purtroppo anche molto facile) scrivere programmi che (durante l'esecuzione assegnano ad una variabile di un certo tipo degli R-valori di tipo diverso (e incompatibile) senza che queste violazioni vengano segnalate né durante la compilazione né durante l'esecuzione.

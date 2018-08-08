@@ -1,10 +1,12 @@
 ## Progetto abbastanza impegnativo 
 
-Consistente nella _digitalizzazione_ del libro di Programmazione(autore Gilberto Filè) del primo anno di Informatica dell'UniPD, quando possibile migliorandolo, aggiungendo note, suggerimenti, esercizi svolti in laboratorio, così da avere una guida abbastanza
+Consistente nella _digitalizzazione_ del libro di Programmazione (autore Gilberto Filè) del primo anno di Informatica dell'UniPD, quando possibile migliorandolo, aggiungendo note, suggerimenti, esercizi svolti in laboratorio, così da avere una guida abbastanza
 completa per chi affronta il corso per la prima volta.
 
 Ogni contributo è ben accetto.
 
 ### Attualmente disponibili i capitoli:
+* Capitolo 1
 * Capitolo 2
 * Capitolo 3
+* Capitolo 6

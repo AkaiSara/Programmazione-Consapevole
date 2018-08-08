@@ -1,9 +1,180 @@
 \chapter{Introduzione}
+\noindent
+Questo libro è rivolto a studenti che sanno poco o nulla di programmazione e che intendono impararla in modo approfondito.
+Il suo scopo non è solamente quello di illustrare un particolare linguaggio di programmazione attraverso una serie di esempi, ma anche quello di proporre un modo \textit{consapevole} di scrivere programmi che aumenti la probabilità che siano subito corretti.
+Pensiamo che un buon informatico debba sapere cosa succede quando i suoi programmi sono compilati ed eseguiti e quindi il libro tratta anche alcuni concetti relativi ai linguaggi di programmazione che raramente sono trattati in un testo introduttivo.
+Tra questi concetti ricordiamo i tipi, la gestione dei dati durante l'esecuzione dei programmi, la gestione delle eccezioni, e la gestione dell'esecuzione delle funzioni (anche ricorsive).
+L'importanza di questi concetti va ben al di là del singolo linguaggio (che sia C o C++), infatti essi si applicano praticamente a tutti i linguaggi di programmazione esistenti. 
+
+Per quanto riguarda il modo di sviluppare programmi, l'idea che permea questo testo è che più un programma è semplice, più è probabile che non contenga errori.
+Non a caso il sottotitolo del libro è \textit{semplice è bello}.
+La convinzione dell'autore (e che pare difficile confutare) è che:
+\textit{non si può scrivere un programma e credere che sia corretto se non si sa dire chiaramente cosa il programma dovrebbe fare e perché lo fa}.
+In coerenza con questo principio, ogni programma che realizzeremo sarà accompagnato da una descrizione precisa di quello che vorremmo che calcolasse e da una dimostrazione che effettivamente lo calcola.
+Queste dimostrazioni sono comprensibili e quindi utili solo quando, nello scrivere i programmi, avremo seguito una logica il più possibile semplice e lineare.
+Insomma, il motto \textit{semplice è bello} è una scelta obbligata se vogliamo dimostrare la correttezza dei nostri programmi.
+
+Il linguaggio di programmazione adottato nel testo è il C++ senza le classi e gli oggetti.
+Non si tratta del C, infatti anche senza le classi e gli oggetti, il C++ ha alcune caratteristiche che lo rendono più espressivo del suo predecessore C, come per esempio il passaggio dei parametri per riferimento, e la gestione delle eccezioni.
+Per non ripetere continuamente il\textit{C++ senza le classi e gli oggetti}, nel seguito chiameremo questo linguaggio semplicemente C++.
+Per quanto riguarda caratteristiche del C++ che non hanno trovato posto in questo libro, esistono molti manuali di riferimento del linguaggio, alcuni dei quali sono disponibili gratuitamente su internet.
+Anche il sito (\url{www.cplusplus.com}) è ricco di informazioni.
+
+Il libro è organizzato in 12 Capitoli.
+I Capitoli 2, 3, 5, 7 e 9 trattano il linguaggio di programmazione.
+Ovviamente nei primi Capitoli sono illustrate le cose più semplici come i tipi predefiniti e le istruzioni di base, per passare successivamente ai tipi definiti dall'utente e ai contenitori, per finire con il sovraccaricamento e i \texttt{namespace}.
+Questi Capitoli sono intercalati da Capitoli con molti esempi ognuno corredato dalla relativa dimostrazione di correttezza.
+Il Capitolo 4 introduce le prime dimostrazioni di correttezza, ma il Capitolo 6 riveste un ruolo particolarmente importante in quanto in esso viene formulata una semplice \textit{ricetta}, detta \textit{ricetta di} \textbf{indicizzazione}, che è molto utile in tutte le dimostrazioni successive.
+La ricorsione è introdotta nel Capitolo 10 e approfondita nei successivi Capitoli 11 e 12 che illustrano le liste concatenate e gli alberi binari.
+Questi Capitoli contengono molti esempi di funzioni ricorsive la cui correttezza è dimostrata con l'induzione. 
+
+In quello che resta del presente Capitolo verranno introdotte alcune nozioni molto semplici, ma comunque molto utili nel seguito del testo, su come è organizzato un Computer, su come scrivere un programma C++ e su come eseguirlo. 
+Il Capitolo si conclude con la Sezione 1.3 in cui viene spiegata la notazione logico-matematica che è usata costantemente nel resto del libro. 
+
 \section{Struttura di un computer}
+\noindent
+L'architettura di un computer moderno è sorprendentemente simile a quella dei primi computer costruiti negli anni quaranta.
+Questa architettura viene chiamata di von Neumann in onore dell'ideatore dei primi computer. Naturalmente la tecnologia di realizzazione dei computer si è enormemente evoluta nel corso di questi 70 anni, e questa evoluzione ha portato un'incredibile riduzione nelle dimensioni dei computer ed un altrettanto incredibile aumento della loro velocità di esecuzione, ma le funzionalità delle diverse parti e la loro cooperazione sono, in linea di principio, ancora simili a quelle dei tempi di von Neumann. 
+
+Un computer contiene un'unità di calcolo ed una memoria.
+L'unità di calcolo è detta \textbf{Central Processing Unit} (CPU) e consiste di registri capaci di contenere i valori da manipolare durante l'elaborazione e da circuiti in grado di effettuare operazioni (per esempio, la somma o la sottrazione) sui valori contenuti nei registri e anche di trasferire valori dalla memoria ai registri e viceversa.
+Le operazioni che questi circuiti sono in grado di effettuare sono dette \textbf{operazioni macchina}.
+La memoria è costituita da una sequenza di byte, ciascuno composto da 8 bit e identificato da un indirizzo.
+Gli indirizzi dei byte della memoria iniziano da 0 e crescono fino alla dimensione totale della memoria stessa.
+Un valore, per esempio un valore intero, può occupare più byte contigui e in questo caso diremo che il valore risiede nella memoria all'indirizzo del primo di questi byte.
+Abbiamo già detto che la CPU è in grado di eseguire operazioni che trasportano valori dalla memoria RAM ad un registro della CPU e viceversa.
+Queste operazioni richiedono di specificare l'indirizzo del primo byte da cui si preleva (o in cui viene copiato) il valore trasportato.
+Dato che tramite gli indirizzi è possibile accedere ad un qualsiasi byte della memoria, questa memoria è chiamata \textbf{Random Acccess Memory (RAM)}, cioè Memoria ad Accesso Casuale.
+Per quanto riguarda l'esecuzione dei programmi da parte di un computer, essa avviene in linea di massima nel modo seguente:
+il programma da eseguire ed i valori che esso manipola durante l'esecuzione, si trovano entrambi nella RAM (ma in parti diverse).
+Uno dei registri della CPU, detto \textbf{Program Counter} (PC) contiene in ogni momento l'indirizzo della prossima istruzione del programma da eseguire e la CPU \textit{riconosce} quell'istruzione, la esegue e passa alla istruzione successiva incrementando il PC.
+L'esecuzione di un'istruzione in generale modifica i valori dei dati del programma.
+
+Ovviamente questa descrizione è molto semplificata, ma sufficiente per capire i concetti relativi alla programmazione che seguiranno.
+
 \section{Come scrivere ed eseguire un programma}
+\noindent 
+Ogni programma, scritto in un qualsiasi linguaggio di programmazione (come Pa­scal o C++ o Java, ecc.), per poter essere eseguito deve venire tradotto in una sequenza di operazioni macchina.
+Questa traduzione viene effettuata da un programma che si chiama \textbf{compilatore}.
+Il programma di partenza (in Pascal o C++ ecc.) viene chiamato \textbf{programma sorgente}, mentre la corrispondente traduzione in linguaggio macchina si chiama \textbf{programma oggetto}\footnote[1]{In realtà la traduzione dal linguaggio sorgente a quello macchina può consistere di vari passaggi che coinvolgono linguaggi intermedi, macchine virtuali e fasi di interpretazione, ma questi aspetti esulano dallo scopo del presente testo.}.
+
+La traduzione del programma sorgente in programma oggetto ha successo solo se il sorgente è scritto seguendo alla lettera le regole sintattiche del linguaggio di programmazione adottato.
+Queste regole sono molto precise in quanto esse devono eliminare qualsiasi ambiguità nel significato dei programmi.
+Per esempio nel C++ ogni istruzione deve terminare con un ';' ed i blocchi con più di una istruzione devono essere racchiusi tra parentesi graffe.
+Violazioni alle regole sintattiche vengono segnalate dal compilatore con messaggi che generalmente consentono di correggere facilmente gli errori. 
+
+Per eseguire i programmi presentati in questo libro, basterà avere sul proprio computer un compilatore C++ possibilmente conforme al C++ standard.
+Consigliamo il compilatore GNU C++ 4.1 (e qualunque versione successiva).
+Si tratta di software libero che è facile trovare e scaricare dalla rete sul proprio computer (\url{gcc.gnu.org}).
+Questo compilatore è realizzato per funzionare con il sistema operativo Linux, ma per i sistemi operativi Microsoft è possibile scaricare l'ambiente \textbf{Cygwin} che simula un ambiente Linux e possiede al suo interno un compilatore C++ della GNU.
+Anche Cygwin è software libero (\url{Cygwin.com}).
+Nel seguito assumeremo che i nostri lettori siano in grado di aprire una finestra di comando (detta \textbf{shell}), da cui potranno spostarsi nelle diverse cartelle del file system che contengono i loro programmi e da cui potranno lanciare i comandi di compilazione e di esecuzione dei programmi, che descriveremo dopo il seguente esempio. 
+
+\bigskip
+
+\noindent\textbf{Esempio 1.1}
+\begin{codice}
+
+#include<iostream>
+using namespace std;
+main()
+{
+  int x, y;
+  cout << "Inserire 2 interi";
+  cin >> x >> y;
+  cout << "Valore di x = " << x << ", valore di y = " << y;
+}
+\end{codice}
+
+\paragraph{Esercizio 1.2} \textit{Scrivere il programma dell'Esempio 1.1 usando un qualsiasi editore di lesto (si consiglia} \texttt{xemacs})\textit{, compilarlo ed eseguirlo utilizzando i comandi spiegati di seguilo.}
+
+Assumiamo che il file di testo contenente il programma dell'Esempio 1.1 si chiami \texttt{pippo.cpp} e che risieda nella cartella \texttt{pluto}.
+Useremo spesso nomi come \texttt{pippo} e \texttt{pluto} per indicare che si tratta di nomi arbitrari.
+Al contrario, l'estensione \texttt{.cpp} in \texttt{pippo.cpp} è necessaria perché indica al compilatore che il file contiene un programma C++.
+Se la cartella corrente è \texttt{pluto}, il comando \texttt{g++} \texttt{pippo.cpp}, invoca il compilatore C++ che compila il programma \texttt{pippo.cpp} e produce il corrispondente programma oggetto nel file \texttt{a.out} o \texttt{a.exe}, a seconda che il nostro computer abbia un sistema operativo Linux oppure Windows, rispettivamente.
+Una volta effettuata la compilazione, il comando \texttt{./ a.out} (oppure \texttt{./ a.exe}) esegue il codice oggetto.
+Qualora si desideri attribuire un nome meno anonimo di \texttt{a.out} o \texttt{a.exe} al file oggetto, basterà lanciare la compilazione con il comando seguente:
+\texttt{g++ -o paperino pippo.cpp}.
+Questo comando metterà il codice oggetto nel file \texttt{paperino}, che verrà eseguito con \texttt{./ paperino}.
+Qualunque sia il nome del codice oggetto, la sua esecuzione causerà l'apparizione sul video della scritta, \texttt{Inserire 2 interi}, con il cursore immediatamente dopo che lampeggia in attesa dei 2 interi richiesti.
+Una volta inserita da tastiera una coppia di interi, per esempio \texttt{3} e \texttt{-2} (separati da uno spazio o da un invio e seguiti da un invio), sul video apparirà la scritta \texttt{Valore di x = 3} seguita da \texttt{, valore di y = -2}.
+Il programma è tale che l'input e l'output, entrambi sul video, siano accostati in modo poco curato.
+Negli esempi successivi vedremo alcuni semplici accorgimenti per realizzare output di qualità migliore.
+Nonostante la sua semplicità, ci sono parecchie cose da spiegare nel programma dell'Esempio 1.1: 
+
+\begin{enumerate}
+\item 
+La prima istruzione \texttt{\#include<iostream>} non è un'istruzione C++ bensì un comando, rivolto al compilatore, che richiede l'inclusione della classe di input/output \texttt{iostream} nel \texttt{namespace std}.
+La successiva istruzione \texttt{using namespace std;} permette al nostro programma di accedere a tutto quello che è definito nel \texttt{namespace std} e quindi anche alla classe \texttt{iostream}.
+Usare questa classe è necessario perché essa contiene le definizioni delle operazioni di input e di output che usiamo nel nostro programma e quindi se la classe \texttt{iostream} non fosse presente le operazioni di input e di output risulterebbero indefinite.
+Tutto questo sembrerà certamente \textit{ostrogoto} al neofita.
+Per il momento si tratta di usare queste istruzioni senza capirle.
+La successiva trattazione dovrebbe renderle più comprensibili. 
+
+\item
+\texttt{main()} è il nome di una \textbf{funzione} e quello che segue, racchiuso tra parentesi graffe, è il \textbf{corpo} della funzione, cioè le istruzioni che la compongono.
+Nel seguito una sequenza di istruzioni racchiuse tra graffe viene chiamato un \textbf{blocco}.
+In inglese \texttt{main} significa \textit{principale}.
+Ogni programma deve contenere esattamente una funzione \texttt{main} e l'esecuzione di ogni programma inizia sempre dalla prima istruzione della funzione \texttt{main}.
+Le parentesi tonde \texttt{()} che seguono il nome \texttt{main} indicano che si tratta di una funzione e che (in questo caso) non ha argomenti.
+In realtà il C++ consente di passare parametri al \texttt{main}, ma è decisamente troppo presto per questo genere di dettagli tecnici.
+Rinviamo il lettore inguaribilmente curioso al sito \url{www.cplusplus.com} per maggiori informazioni su questo.
+
+\item
+Nel C++ l'input e l'output sono visti come sequenze di byte (come la memoria RAM).
+In inglese sequenza si dice "stream" ed infatti i nomi legati all'input ed all'output sono variabili di tipo \texttt{stream}.
+L'operazione di out­put più comune è $<<$.
+Il dispositivo standard di output è il video ed il nome dello \texttt{stream} che gli viene associato nella libreria \texttt{iostream} è \texttt{cout}.
+Per l'input, l'operazione base è $>>$, il dispositivo standard di input è la tastiera ed il nome dello \texttt{stream} associato è \texttt{cin}.
+
+\item
+Nel programma che stiamo considerando usiamo sia l'operazione di scrittura $<<$ che quella di lettura $>>$.
+Queste operazioni hanno entrambe 2 argomenti:
+lo \texttt{stream cout} o \texttt{cin} ed il valore da mandare in output oppure, rispettivamente, la variabile a cui assegnare il valore letto da \texttt{cin}.
+Un esempio di un comando di output è la seconda riga del corpo del \texttt{main}:
+questa istruzione (quando viene eseguita) produce la stampa su video del valore stringa di caratteri \texttt{"Inserire 2 interi"}.
+Nella terza riga del \texttt{main} troviamo invece un esempio di un'istruzione di lettura.
+Questa istruzione va vista in realtà come \texttt{(cin >> x) >> y;} in cui la prima parte \texttt{(cin >> x)} legge il prossimo valore dallo \texttt{stream} di input \texttt{cin}, lo assegna alla variabile \texttt{x} e restituisce \texttt{cin} in modo da consentire la seconda lettura, \texttt{(cin >> y)}, che assegna il prossimo valore letto a \texttt{y} e restituisce \texttt{cin} che però non serve a nulla dato che le letture sono finite.
+Per finire, la quarta istruzione del corpo del \texttt{main} è un output che stampa di seguito le stringhe \texttt{"Valore di x = "} e \texttt{", valore di y = "}, ciascuna seguita dal corrispondente valore (appena letto) di \texttt{x} e di \texttt{y}. 
+
+\end{enumerate}
+
 \section{Notazione}
+\noindent Per descrivere in modo formale i concetti ed in particolare per scrivere le asserzioni di correttezza dei programmi, useremo una notazione logico-matematica che conviene spiegare una volta per tutte in questa Sezione.
 
+Principalmente useremo le operazioni logiche di congiunzione (e), di disgiunzione (o), di negazione, d'implicazione e di equivalenza.
+Per completezza, ricordiamo che la congiunzione di 2 affermazioni (A e B) è vera quando entrambe sono vere, mentre la loro disgiunzione (A o B) è vera se almeno una tra A e B è vera.
+La negazione di un'affermazione è vera se l'affermazione è falsa.
+Un'affermazione A implica B, quando B è vera ogni volta che A è vera.
+L'equivalenza di 2 affermazioni è lo stesso che richiedere che ciascuna delle 2 implichi l'altra e quindi 2 affermazioni sono equivalenti se sono sempre entrambe vere o entrambe false. 
 
+I simboli che verranno usati per rappresentare queste operazioni sono vari:
 
+\begin{itemize}
+\item
+La congiunzione è rappresentata spesso da \&\& (come nel C++), ma spesso viene usata semplicemente la virgola per evitare di appesantire troppo le formule.
+Quindi verrà scritto (A \&\& B) oppure (A, B).
 
-\newpage
+\item
+La disgiunzione viene rappresentata con la doppia sbarra verticale $\|$, come nel C++, e anche per la negazione useremo il punto esclamativo ! come nel C++.
+Quindi scriveremo A $\|$ B e !A.
+
+\item
+Si rappresenta l'implicazione con $\Rightarrow$, mentre l'equivalenza la si rappresenta con $\Leftrightarrow$ (è la doppia implicazione!), ma anche con \textbf{se e solo se}, spesso abbreviato in \textbf{sse}.
+
+\end{itemize}
+
+Avremo bisogno di considerare insiemi \textit{S} di oggetti e di affermare che tutti gli elementi di \textit{S} soddisfano una certa proprietà \textit{P(·)}.
+Questa affermazione è descritta dalla seguente formula:
+\textit{$\forall$a $\in$ S,P(a)}.
+Invece \textit{$\exists$a $\in$ S,P(a)} significa che esiste (almeno) un \textit{a $\in$ S} tale che valga \textit{P(a)}.
+Vale la pena di osservare che qualora
+\textit{S = $\emptyset$}, allora \textit{$\forall$a $\in$ S,P(a)} è vero perché richiedere che per tutti gli elementi di \textit{S} (cioè nessuno) valga \textit{P(·)} è banalmente vero.
+Al contrario, se \textit{S = $\emptyset$}, allora \textit{$\exists$a $\in$ S,P(a)} è, altrettanto banalmente, falso perché essa richiede che ci sia qualche elemento \textit{a $\in$ S} per cui \textit{P(a)} sia vero.
+
+Spesso verranno considerati gli insiemi composti da tutti gli interi tra 2 estremi \textit{i} e \textit{j}.
+Un tale insieme è rappresentato con \textit{[i..j]}.
+Qualora \textit{i > j}, \textit{[i..j]} rappresenta l'insieme vuoto.
+In molti casi \textit{[i..j]} rappresenta indici di un array \textit{A} e con \textit{A[i..j]} si indica la sequenza degli elementi di \textit{A} dalla posizione \textit{i} alla \textit{j}.
+
+\noindent Se \textit{[i..j]} è tale che \textit{i > j}, allora \textit{A[i..j]} rappresenta la sequenza vuota di elementi dell'array \textit{A}. 
